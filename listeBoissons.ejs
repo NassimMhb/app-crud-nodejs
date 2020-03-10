@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+<h1>Liste des boissons</h1>
+<br>
+<h3>Hello, <%= name %></h3>
+<br>
+<table id="customers">
+  <tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <%  for(var i=0; i < data.length; i++){ %>
+    <tr>
+        <td><%= data[i]._id %></td>
+        <td><%= data[i].nom %></td>
+        <td><%= data[i].description %></td>
+    </tr>
+    <% } %>
+</table>
+
+</body>

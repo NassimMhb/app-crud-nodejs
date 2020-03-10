@@ -4,7 +4,7 @@ const path = require('path');
 // Create and Save a new boissons
 exports.create = (req, res) => {
     // Validate request
-    if(!req.body.content) {
+    if(!req.body.description) {
         return res.status(400).send({
             message: "Boissons content can not be empty"
         });
@@ -31,8 +31,8 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     Boissons.find()
     .then(boissons => {
-    //   res.sendFile(path.join(__dirname+'/../../listeBoissons.html'), {data: boissons, name:'nassim'});
-        res.send(data);
+       res.render(path.join(__dirname+'/../../listeBoissons.ejs'), {data: boissons, name:'nassim'});
+    //    res.send(data);
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while retrieving boissons."
