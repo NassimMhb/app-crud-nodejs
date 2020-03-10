@@ -6,7 +6,7 @@
 #customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 80%;
 }
 
 #customers td, #customers th {
@@ -24,6 +24,38 @@
   text-align: left;
   background-color: #4CAF50;
   color: white;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 50%;
 }
 </style>
 </head>
@@ -46,5 +78,16 @@
     </tr>
     <% } %>
 </table>
-
+<br>
+<h3>Ajouter une boisson dans la liste : </h3>
+<div>
+    <form method="POST" action="/ajouterBoissons">
+        <label for="lnom">Nom boisson</label>
+        <input type="text" id="lnom" name="nom" placeholder="Nom de la boisson...">
+        <label for="ldescription">Description boisson</label>
+        <input type="text" id="ldescription" name="description" placeholder="Description de la boisson...">
+      <input type="submit" value="Ajouter">
+    </form>
+  </div>
+  
 </body>

@@ -2,7 +2,7 @@ module.exports = (app) => {
     const boissons = require('../controllers/boissons.controller.js');
 
     // Creer une nouvelle boisson
-    app.post('/boissons', boissons.create);
+    app.post('/ajouterBoissons', boissons.create);
 
     // Retrouver toutes les boissons
     app.get('/boissons', boissons.findAll);

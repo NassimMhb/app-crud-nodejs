@@ -19,7 +19,7 @@ exports.create = (req, res) => {
     // Save Boissons in the database
     boissons.save()
     .then(data => {
-        res.send(data);
+        res.redirect('/boissons')
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating the Boissons."
